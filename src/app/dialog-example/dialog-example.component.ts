@@ -1,5 +1,5 @@
-import { Component, OnInit, Inject } from '@angular/core';
-import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
+import { Component} from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
 import { DialogExampleFormComponent } from './dialog-example-form/dialog-example-form.component';
 
 export interface DialogData {
@@ -24,13 +24,13 @@ export class DialogExampleComponent {
   constructor(public dialog: MatDialog) {}
 
   openDialog(): void {
-    const dialogRef = this.dialog.open(DialogExampleFormComponent, {
+   // console.log('มา')
+    let dialogRef = this.dialog.open(DialogExampleFormComponent, {
       width: '250px',
-      data: {name: this.name, animal: this.animal},
+      data: { name: this.name, animal: this.animal }
     });
 
     dialogRef.afterClosed().subscribe(result => {
-      console.log('The dialog was closed');
       this.animal = result;
     });
   }

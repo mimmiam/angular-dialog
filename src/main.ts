@@ -1,3 +1,4 @@
+import {VERSION as MAT_VERSION} from '@angular/material/core';
 import { enableProdMode } from '@angular/core';
 import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 
